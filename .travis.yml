@@ -7,9 +7,9 @@ before_install:
   - docker build -t caiquedutra/docker-react -f Dockerfile.dev .
 
 script:
-<<<<<<< HEAD
-  - docker run caiquedutra/docker-react npm run test -- --coverage
+  - docker run -e CI=true caiquedutra/docker-react npm run test -- --coverage
 
+  
 
 deploy:
   provider: elasticbeanstalk
@@ -24,9 +24,5 @@ deploy:
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
   
-
-=======
-  - docker run -e CI=true caiquedutra/docker-react npm run test -- --coverage
->>>>>>> 72d1841fbd2a3baf183f6651cf10a2aa65c5ea9b
 
 
